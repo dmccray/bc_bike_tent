@@ -1,4 +1,4 @@
-defmodule BcBikeTent.Language do
+defmodule BcBikeTent.BikeTent.Language do
 	use Ecto.Schema
 
 	@primary_key {:language_t, :id, autogenerate: true}
