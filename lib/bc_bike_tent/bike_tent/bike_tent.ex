@@ -17,7 +17,7 @@ defmodule BcBikeTent.BikeTent do
       [%Mechanic{}, ...]
 
   """
-  def list_mechanic do
+  def list_mechanics do
     Repo.all(Mechanic)
   end
 
@@ -110,8 +110,8 @@ defmodule BcBikeTent.BikeTent do
       [%Language{}, ...]
 
   """
-  def list_language do
-    raise "TODO"
+  def list_languages do
+    Repo.all(Language)
   end
 
   @doc """
@@ -125,7 +125,7 @@ defmodule BcBikeTent.BikeTent do
       %Language{}
 
   """
-  def get_language!(id), do: raise "TODO"
+  def get_language!(id), do: Repo.get!(Language, id)
 
   @doc """
   Creates a language.
@@ -140,7 +140,9 @@ defmodule BcBikeTent.BikeTent do
 
   """
   def create_language(attrs \\ %{}) do
-    raise "TODO"
+    %Language{}
+    |> Language.changeset(attrs)
+    |> Repo.insert()
   end
 
   @doc """
@@ -156,7 +158,9 @@ defmodule BcBikeTent.BikeTent do
 
   """
   def update_language(%Language{} = language, attrs) do
-    raise "TODO"
+    language
+    |> Language.changeset(attrs)
+    |> Repo.update()
   end
 
   @doc """
@@ -172,7 +176,7 @@ defmodule BcBikeTent.BikeTent do
 
   """
   def delete_language(%Language{} = language) do
-    raise "TODO"
+    Repo.delete(language)
   end
 
   @doc """
@@ -185,7 +189,7 @@ defmodule BcBikeTent.BikeTent do
 
   """
   def change_language(%Language{} = language) do
-    raise "TODO"
+    Language.changeset(language, %{})
   end
 
   alias BcBikeTent.BikeTent.Service
@@ -199,8 +203,8 @@ defmodule BcBikeTent.BikeTent do
       [%Service{}, ...]
 
   """
-  def list_service do
-    raise "TODO"
+  def list_services do
+    Repo.all(Service)
   end
 
   @doc """
@@ -214,7 +218,7 @@ defmodule BcBikeTent.BikeTent do
       %Service{}
 
   """
-  def get_service!(id), do: raise "TODO"
+  def get_service!(id), do: Repo.get!(Service, id)
 
   @doc """
   Creates a service.
@@ -229,7 +233,9 @@ defmodule BcBikeTent.BikeTent do
 
   """
   def create_service(attrs \\ %{}) do
-    raise "TODO"
+     %Service{}
+    |> Service.changeset(attrs)
+    |> Repo.insert()
   end
 
   @doc """
@@ -245,7 +251,9 @@ defmodule BcBikeTent.BikeTent do
 
   """
   def update_service(%Service{} = service, attrs) do
-    raise "TODO"
+    service
+    |> Service.changeset(attrs)
+    |> Repo.update()
   end
 
   @doc """
@@ -261,7 +269,7 @@ defmodule BcBikeTent.BikeTent do
 
   """
   def delete_service(%Service{} = service) do
-    raise "TODO"
+    Repo.delete(service)
   end
 
   @doc """
@@ -274,6 +282,6 @@ defmodule BcBikeTent.BikeTent do
 
   """
   def change_service(%Service{} = service) do
-    raise "TODO"
+    Service.changeset(service, %{})
   end
 end
