@@ -17,6 +17,6 @@ defmodule BcBikeTent.BikeTent.Mechanic do
 		mechanic
 		|> cast(attrs, [:first_name, :middle_name, :last_name, :email_address, :phone_number])
 		|> validate_required([:last_name])
-		|> cast_assoc(:service, required: false)
+		#|> cast_assoc(:service, required: false)
 	end
 end

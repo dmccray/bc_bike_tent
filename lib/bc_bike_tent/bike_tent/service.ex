@@ -18,7 +18,5 @@ defmodule BcBikeTent.BikeTent.Service do
 		service
 		#make sure to put the foreign_ids in the cast (i.e. mechanic_id and language_t) if you want to set them when creating and updating
 		|> cast(attrs, [:service_dt, :client_name, :email_address, :claimed_bool, :problem, :mechanic_id, :language_t])
-		#|> cast_assoc(:mechanic, required: false) 
-		#|> cast_assoc(:language, required: false)
 	end
 end
